@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:          #09090f;
+  --surface:     #101018;
+  --surface2:    #15151f;
+  --surface3:    #1a1a28;
+  --border:      #1e1e2e;
+  --border2:     #2a2a40;
+
+  --text:        #e8e8f2;
+  --text2:       #7878a0;
+  --text3:       #44445a;
+
+  --accent:      #3b6bff;
+  --accent-dark: #2a55ee;
+  --accent-soft: rgba(59,107,255,0.12);
+  --accent-glow: rgba(59,107,255,0.25);
+
+  --gold:        #f0b429;
+  --gold2:       #d9a020;
+  --gold-soft:   rgba(240,180,41,0.12);
+
+  --green:       #34d399;
+  --green-soft:  rgba(52,211,153,0.12);
+  --red:         #f87171;
+  --red-soft:    rgba(248,113,113,0.12);
+  --yellow:      #fbbf24;
+  --yellow-soft: rgba(251,191,36,0.12);
+
+  --text-inv:    #ffffff;
+  --text-inv2:   rgba(255,255,255,0.55);
+  --text-inv3:   rgba(255,255,255,0.28);
+
+  --shadow:    0 1px 3px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.6);
+
+  --radius:    14px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+
+  --font: 'Plus Jakarta Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+
+  --cream:  #0d0d16;
+  --cream2: #12121e;
+  --white:  #1a1a28;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+input[type=file] { display: none; }
