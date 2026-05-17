@@ -1,16 +1,51 @@
-# React + Vite
+# Friilance — Freelance Finance Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application designed to help freelancers manage their finances, send money to collaborators, and receive payments from clients.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+Friilance is a multi-repo full-stack project built to simulate real-world freelance financial workflows such as payments, transfers, and transaction tracking.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The system is split into:
+- **Frontend Repository**
+- **Backend Repository**
 
-## Expanding the ESLint configuration
+Each part was built with different learning goals in mind.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+# Friilance Frontend
+
+## Project Overview
+
+The frontend is a multi-page web application (MPA) designed to handle different user flows such as authentication, dashboards, transactions, and payments.
+
+It focuses on structuring navigation and pages in a scalable way rather than a single-page architecture.
+
+---
+
+## Key Features
+
+- Multi-page application (MPA architecture)
+- User authentication flow
+- Dashboard for financial overview
+- Send and receive money interface
+- Transaction history tracking
+- Responsive UI across devices
+
+---
+
+## What I Learned
+
+- Building a **multi-page web application (MPA)** instead of a SPA
+- Structuring navigation across multiple pages
+- Organizing frontend code for scalability
+- Managing UI state across different views
+- Designing user flows for financial applications
+
+
+##  Key Takeaway
+
+Friilance helped me understand how to structure full-stack applications around real-world financial workflows, while also exploring alternative backend storage systems and multi-page frontend architecture.
