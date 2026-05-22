@@ -1,4 +1,4 @@
-const BASE_URL = "https://localhost:7002/api";
+const BASE_URL = "https://friilance-backend.onrender.com/api";
 
 export async function apiFetch(path, opts = {}, token) {
   const headers = {
