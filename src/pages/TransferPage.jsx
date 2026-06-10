@@ -225,7 +225,7 @@ function TransferPage({ accounts, token, showToast, onRefresh }) {
               </thead>
               <tbody>
                 {txns.map((tx) => {
-                  const isIncoming = tx.type === "Deposit";
+                  const isIncoming = tx.isIncoming;
                   const counterparty = isIncoming
                     ? tx.senderName || "External"
                     : tx.recipientName || "—";

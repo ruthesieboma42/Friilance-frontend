@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import { apiFetch, apiFileFetch } from "../api";
 import { fmtCurrency, fmtDate, fmtTime } from "../utils";
 import TxBadge, { TxTypeLabel } from "../components/TxBadge";
 
  function StatementsPage({ accounts, token }) {
-  const [accountId, setAccountId] = useState(accounts[0]?.id || "");
+  const [accountId, setAccountId] = useState("");
+  useEffect(() => {
+  if (!accountId && accounts.length > 0) setAccountId(accounts[0].id);
+  }, [accounts, accountId]);
   const [project, setProject]     = useState("");
   const [from, setFrom]           = useState("");
   const [to, setTo]               = useState("");
   const [statement, setStatement] = useState(null);
   const [loading, setLoading]     = useState(false);
   const [error, setError]         = useState("");
+  
 
   async function fetchStatement(e) {
     e.preventDefault();
@@ -115,9 +119,11 @@ import TxBadge, { TxTypeLabel } from "../components/TxBadge";
                       <td><TxTypeLabel type={tx.type} /></td>
                       <td className="mono" style={{ fontSize: 11 }}>{tx.reference}</td>
                       <td>{tx.projectName && <span className="chip">{tx.projectName}</span>}</td>
-                      <td style={{ fontSize: 12 }}>{tx.type === "Deposit" ? tx.senderName : tx.recipientName}</td>
+                      <td>{tx.isIncoming ? tx.senderName || "External" : tx.recipientName || "—"}</td>
                       <td className="mono" style={{ color: tx.type === "Deposit" ? "var(--green)" : "var(--red)", fontWeight: 600 }}>
-                        {tx.type === "Deposit" ? "+" : "-"}{fmtCurrency(tx.amount)}
+                        <td style={{ color: tx.isIncoming ? "var(--green)" : "var(--red)" }}>
+                          {tx.isIncoming ? "+" : "-"}{fmtCurrency(tx.amount)}
+                        </td>
                       </td>
                       <td><TxBadge status={tx.status} /></td>
                     </tr>

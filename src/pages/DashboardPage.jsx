@@ -85,7 +85,7 @@ function DashboardPage({ accounts, token, onRefresh, showToast }) {
     txns.forEach((tx) => {
       const day = fmtDate(tx.createdAt);
       if (!grouped[day]) grouped[day] = { date: day, income: 0, expenses: 0 };
-      if (tx.type === "Deposit") grouped[day].income += tx.amount;
+      if (tx.isIncoming) grouped[day].income += tx.amount;
       else grouped[day].expenses += tx.amount;
     });
     return Object.values(grouped).slice(-7);
@@ -265,7 +265,8 @@ function DashboardPage({ accounts, token, onRefresh, showToast }) {
                 </thead>
                 <tbody>
                   {recentTxns.map((tx) => {
-                    const isIncoming = tx.type === "Deposit" || (tx.type === "Transfer" && tx.recipientId === acc.id) ;
+                    const isIncoming = tx.isIncoming;
+;
                     return (
                       <tr key={tx.id}>
                         <td>

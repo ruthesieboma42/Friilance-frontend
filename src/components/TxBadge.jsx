@@ -13,7 +13,9 @@ export default function TxBadge({ status }) {
   return <span className="badge yellow">Pending</span>;
 }
 
-export function TxTypeLabel({ type }) {
-  const map = { Deposit: "↓ Deposit", Transfer: "↑ Transfer", BulkTransfer: "⇉ Bulk" };
-  return <span style={{ fontSize: 12, color: "var(--text2)" }}>{map[type] || type}</span>;
+
+export function TxTypeLabel({ type, isIncoming }) {
+  if (type === "Deposit") return <span>↓ Deposit</span>;
+  if (type === "BulkTransfer") return <span>{isIncoming ? "↓" : "⇉"} Bulk</span>;
+  return <span>{isIncoming ? "↓" : "↑"} Transfer</span>;
 }
